@@ -43,7 +43,8 @@ public class ArrayExamples {
       } else
         count++;
     }
-    return sum / (arr.length - count);
+    sum += (count - 1) * lowest;
+    return sum / (arr.length - 1);
   }
 
 }

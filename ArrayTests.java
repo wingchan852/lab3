@@ -44,7 +44,7 @@ public class ArrayTests {
   @Test
   public void testAverageWithoutLowest() {
     double[] input1 = { 1, 1, 2, 3 };
-    assertEquals(ArrayExamples.averageWithoutLowest(input1), 2.5, 0.001);
+    assertEquals(ArrayExamples.averageWithoutLowest(input1), 2, 0.001);
   }
 
   @Test
