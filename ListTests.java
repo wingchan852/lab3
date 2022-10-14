@@ -8,33 +8,40 @@ class SomeStringChecker implements StringChecker {
 
     @Override
     public boolean checkString(String s) {
-
+        if (s.indexOf('a') == 0 || s.indexOf('e') == 0 || s.indexOf('i') == 0 || s.indexOf('o') == 0
+                || s.indexOf('u') == 0)
+            return true;
         return false;
     }
 
 }
 
 public class ListTests {
-    // @Test
-    // public void testFilter() {
-    // List<String> input1 = Arrays.asList("apple", "banana");
-    // List<String> output = Arrays.asList("apple", "banana");
-    // assertEquals(ListExamples.filter(input1, ));
-    // }
+    @Test
+    public void testFilter() {
+        List<String> input = Arrays.asList("apple", "banana");
+        List<String> output = Arrays.asList("apple");
+        SomeStringChecker stringChecker = new SomeStringChecker();
+        assertEquals(ListExamples.filter(input, stringChecker), output);
+    }
 
-    // @Test
-    // public void testFilter2() {
-    // int[] input2 = { 1, 2, 3 };
-    // assertArrayEquals(new int[] { 1, 2, 3 }, input2);
-    // }
+    @Test
+    public void testFilter2() {
+        List<String> input = Arrays.asList("banana");
+        List<String> output = Arrays.asList("");
+        SomeStringChecker stringChecker = new SomeStringChecker();
+        assertEquals(ListExamples.filter(input, stringChecker), output);
+    }
 
-    // @Test
-    // public void testFilter3() {
-    // int[] input3 = { 1, 1, 2, 3 };
-    // assertArrayEquals(new int[] { 1, 1, 2, 3 }, input3);
-    // }
+    @Test
+    public void testFilter3() {
+        List<String> input = Arrays.asList("apple", "apple", "banana");
+        List<String> output = Arrays.asList("apple", "apple");
+        SomeStringChecker stringChecker = new SomeStringChecker();
+        assertEquals(ListExamples.filter(input, stringChecker), output);
+    }
 
-    // @Test
+    @Test
     public void testMerge() {
         List<String> list1 = Arrays.asList("apple", "cat");
         List<String> list2 = Arrays.asList("banana");
@@ -42,15 +49,15 @@ public class ListTests {
         assertEquals(output, ListExamples.merge(list1, list2));
     }
 
-    @Test
+    // @Test
     public void testMerge2() {
-        List<String> list1 = Arrays.asList("banana", "cat");
+        List<String> list1 = Arrays.asList("banana", "cat", "bee");
         List<String> list2 = Arrays.asList("apple");
-        List<String> output = Arrays.asList("apple", "banana", "cat");
+        List<String> output = Arrays.asList("apple", "banana", "bee", "cat");
         assertEquals(output, ListExamples.merge(list1, list2));
     }
 
-    // @Test
+    @Test
     public void testMerge3() {
         List<String> list1 = Arrays.asList("apple", "cat", "banana");
         List<String> list2 = Arrays.asList("banana");
