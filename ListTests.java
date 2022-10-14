@@ -22,7 +22,7 @@ public class ListTests {
         List<String> input = Arrays.asList("apple", "banana");
         List<String> output = Arrays.asList("apple");
         SomeStringChecker stringChecker = new SomeStringChecker();
-        assertEquals(ListExamples.filter(input, stringChecker), output);
+        assertEquals(output, ListExamples.filter(input, stringChecker));
     }
 
     @Test
@@ -30,7 +30,7 @@ public class ListTests {
         List<String> input = Arrays.asList("banana");
         List<String> output = Arrays.asList("");
         SomeStringChecker stringChecker = new SomeStringChecker();
-        assertEquals(ListExamples.filter(input, stringChecker), output);
+        assertEquals(output, ListExamples.filter(input, stringChecker));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class ListTests {
         List<String> input = Arrays.asList("apple", "apple", "banana");
         List<String> output = Arrays.asList("apple", "apple");
         SomeStringChecker stringChecker = new SomeStringChecker();
-        assertEquals(ListExamples.filter(input, stringChecker), output);
+        assertEquals(output, ListExamples.filter(input, stringChecker));
     }
 
     @Test
